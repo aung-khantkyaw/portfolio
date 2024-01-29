@@ -1,0 +1,148 @@
+
+header {
+  padding-block: 30px;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-inline: 10px;
+}
+
+.logo {
+  position: relative;
+  min-width: 77px px;
+  z-index: 2;
+}
+
+.logo a {
+  color: var(--color-primary);
+  font-family: var(--ff-saira-stencil-one);
+}
+
+.logo span {
+  display: inline-block;
+  color: var(--sizzling-sunrise);
+  margin-left: 2px;
+}
+
+.nav-toggle-btn {
+  visibility: hidden;
+  position: relative;
+  transform: rotate(-55deg);
+  transition: var(--transition-1);
+  z-index: 2;
+}
+
+.nav-toggle-btn:hover {
+  transform: rotate(180deg);
+}
+
+.nav-toggle-btn span {
+  width: 20px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 5px;
+  transition: var(--transition-1);
+}
+
+.nav-toggle-btn :is(.one, .three) {
+  width: 10px;
+}
+
+.nav-toggle-btn .one {
+  margin-left: auto;
+  transform-origin: left;
+}
+
+.nav-toggle-btn .three {
+  transform-origin: right;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-list > li {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.nav-link {
+  position: relative;
+  width: max-content;
+  margin-inline: auto;
+  color: var(--color-primary);
+  font-family: var(--ff-poppins);
+  transform: translateY(0);
+  transition: 0.75s cubic-bezier(0.68, -0.55, 0.27, 2);
+  padding-inline: 5px;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  transform: translateY(50%);
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: var(--sizzling-sunrise);
+  transition: var(--transition-1);
+}
+
+.nav-link:is(:hover)::before {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .nav-toggle-btn {
+    visibility: visible;
+    position: relative;
+    transform: rotate(-55deg);
+    transition: var(--transition-1);
+    z-index: 2;
+  }
+
+  .nav-toggle-btn:hover {
+    transform: rotate(180deg);
+  }
+
+  .nav-toggle-btn span {
+    width: 20px;
+    height: 2px;
+    background: var(--color-primary);
+    margin: 5px;
+    transition: var(--transition-1);
+  }
+
+  .nav-toggle-btn :is(.one, .three) {
+    width: 10px;
+  }
+
+  .nav-toggle-btn .one {
+    margin-left: auto;
+    transform-origin: left;
+  }
+
+  .nav-toggle-btn .three {
+    transform-origin: right;
+  }
+}

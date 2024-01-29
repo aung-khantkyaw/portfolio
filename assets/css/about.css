@@ -1,0 +1,88 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-banner {
+  max-width: 450px;
+  margin-bottom: 0;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.about .btn {
+  max-width: max-content;
+}
+
+.about .btn-secondary {
+  margin-bottom: 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skill-card {
+  position: relative;
+  background: var(--bg-secondary);
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-1);
+  cursor: help;
+}
+
+.skill-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    all: unset;
+    padding-block: var(--section-padding);
+    padding-top: 200px;
+  }
+
+  .about-banner {
+    max-width: 400px;
+    margin-inline: auto;
+    margin-bottom: 80px;
+  }
+
+  .btn-group {
+    all: unset;
+  }
+
+  .about .btn {
+    max-width: unset;
+    width: 100%;
+  }
+
+  .about .btn-secondary {
+    margin-bottom: 10px;
+  }
+}

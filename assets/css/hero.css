@@ -1,0 +1,138 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 0;
+  margin-bottom: var(--section-padding);
+}
+
+.hero-banner {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.hero img {
+  height: 100%;
+  width: auto;
+  margin-inline: auto;
+}
+
+.hero-content {
+  max-width: 550px;
+  --color-primary: var(--white);
+  position: absolute;
+  top: 50%;
+  filter: drop-shadow(2px 4px 10px var(--black));
+}
+
+.hero-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-title span {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--black);
+  display: inline-block;
+  color: var(--sizzling-sunrise-bold);
+}
+
+.hero .btn-primary {
+  margin-inline: auto;
+}
+
+.hero .btn-primary:is(:hover, :focus) {
+  color: hsl(0, 0%, 12%);
+}
+
+.hero-social-list {
+  display: block;
+  position: absolute;
+  bottom: 92px;
+  left: -80px;
+}
+
+.hero-social-list::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 13px;
+  width: 2px;
+  height: 30px;
+  background: var(--color-secondary);
+}
+
+.hero-social-link {
+  position: relative;
+  color: var(--color-secondary);
+  margin-block: 5px;
+  padding: 5px;
+  font-size: 20px;
+  transition: var(--transition-1);
+}
+
+.hero-social-link:is(:hover, :focus) {
+  color: var(--color-primary);
+}
+
+.hero-social-link .tooltip {
+  --trans-x: 10px;
+
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) translateX(var(--trans-x));
+}
+
+.hero-social-link:is(:hover, :focus) .tooltip {
+  --trans-x: 0;
+  opacity: 1;
+}
+
+.scroll-down {
+  display: block;
+  position: absolute;
+  bottom: 80px;
+  right: -80px;
+  color: var(--color-secondary);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  transform-origin: top right;
+}
+
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -50px;
+  width: 30px;
+  height: 2px;
+  background: var(--color-secondary);
+}
+
+.scroll-down:hover {
+  color: var(--sizzling-sunrise-bold);
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .hero-content {
+    position: relative;
+    top: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-social-list {
+    display: none;
+  }
+
+  .scroll-down {
+    display: none;
+  }
+}
